@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.getStarted {
+  block-size: 100vh;
+  background-color: #256cec;
+  padding: 40px;
+  text-align: center;
+  align-items: center;
+  justify-content: center !important;
+}
+
+.getStarted ion-label {
+  margin-block-end: 40px;
+  margin-block-start: 40px;
+  font-size: 20px;
+}
+
+.getStarted button {
+  padding: 10px 50px;
+  border-radius: 7px;
+  background-color: black;
+  display: flex;
+  margin-block-start: 70px;
+  font-size: 17px;
+}
+
+.getStarted button ion-icon {
+  margin-inline-start: 20px;
+}
