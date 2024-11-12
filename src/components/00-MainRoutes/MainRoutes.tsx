@@ -24,98 +24,117 @@ import {
   personSharp,
 } from "ionicons/icons";
 import Getstarted from "../../pages/Getstarted";
+import Login from "../05-Login/Login";
+import OTP from "../05-Login/OTP";
 
 const MainRoutes: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
   const [showSplash, setShowSplash] = useState(true);
   const [showTabs, setShowTabs] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Hide splash screen after 3 seconds
   useEffect(() => {
-    const splashTimeout = setTimeout(() => {
-      setShowSplash(false);
-    }, 3000);
-
-    return () => clearTimeout(splashTimeout);
+    // const splashTimeout = setTimeout(() => {
+    //   setShowSplash(false);
+    // }, 3000);
+    // return () => clearTimeout(splashTimeout);
   }, []);
 
+  // Update visibility of tab bar based on current location
   const showTabBar = ["/tab1", "/tab2", "/tab3", "/tab4"].includes(
     location.pathname
   );
 
-  // Handle button click to show the tabs and navigate to tab1
+  // Handle navigation to Login page on "Get Started" click
   const handleGetStartedClick = () => {
-    setShowTabs(true);
-    history.push("/tab1"); // Navigate to tab1
+    history.replace("/login");
   };
 
-  if (showSplash) {
-    return <Splashscreen />;
-  }
+  // Handle login to navigate to tab1 and show tabs
+  const handleLoginClick = () => {
+    setIsLoggedIn(true);
+    setShowTabs(true);
+    history.replace("/tab1");
+  };
+
+  // if (showSplash) {
+  //   return <Splashscreen />;
+  // }
 
   return (
     <div>
-      {!showTabs ? (
-        <Getstarted onGetStartedClick={handleGetStartedClick} />
-      ) : (
-        <IonTabs>
-          <IonRouterOutlet>
-            <Route exact path="/tab1">
-              <Tab1 />
-            </Route>
-            <Route exact path="/tab2">
-              <Tab2 />
-            </Route>
-            <Route path="/tab3">
-              <Tab3 />
-            </Route>
-            <Route path="/tab4">
-              <Tab4 />
-            </Route>
-            <Route path="/splash">
-              <Splashscreen />
-            </Route>
-            <Route exact path="/">
-              <Redirect to="/tab1" />
-            </Route>
-          </IonRouterOutlet>
-          {showTabBar && (
-            <IonTabBar slot="bottom">
-              <IonTabButton tab="tab1" href="/tab1">
-                <IonIcon
-                  aria-hidden="true"
-                  icon={location.pathname === "/tab1" ? homeSharp : homeOutline}
-                />
-                <IonLabel>Home</IonLabel>
-              </IonTabButton>
-              <IonTabButton tab="tab2" href="/tab2">
-                <IonIcon
-                  aria-hidden="true"
-                  icon={location.pathname === "/tab2" ? appsSharp : appsOutline}
-                />
-                <IonLabel>Categories</IonLabel>
-              </IonTabButton>
-              <IonTabButton tab="tab3" href="/tab3">
-                <IonIcon
-                  aria-hidden="true"
-                  icon={
-                    location.pathname === "/tab3" ? personSharp : personOutline
-                  }
-                />
-                <IonLabel>Account</IonLabel>
-              </IonTabButton>
-              <IonTabButton tab="tab4" href="/tab4">
-                <IonIcon
-                  aria-hidden="true"
-                  icon={location.pathname === "/tab4" ? cartSharp : cartOutline}
-                />
-                <IonLabel>Cart</IonLabel>
-              </IonTabButton>
-            </IonTabBar>
-          )}
-        </IonTabs>
-      )}
+      {/* {!isLoggedIn ? (
+        !showTabs ? (
+          <Getstarted onGetStartedClick={handleGetStartedClick} />
+        ) : (
+          <Login onLoginClick={handleLoginClick} />
+        )
+      ) : ( */}
+      <IonTabs>
+        <IonRouterOutlet>
+          <Route exact path="/tab1">
+            <Tab1 />
+          </Route>
+          <Route exact path="/tab2">
+            <Tab2 />
+          </Route>
+          <Route path="/tab3">
+            <Tab3 />
+          </Route>
+          <Route path="/tab4">
+            <Tab4 />
+          </Route>
+          <Route path="/splash">
+            <Splashscreen />
+          </Route>
+          <Route path="/otp">
+            <OTP />
+          </Route>
+          <Route path="/login">
+            <Login onLoginClick={handleLoginClick} />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/tab1" />
+          </Route>
+        </IonRouterOutlet>
+        {showTabBar && (
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="tab1" href="/tab1">
+              <IonIcon
+                aria-hidden="true"
+                icon={location.pathname === "/tab1" ? homeSharp : homeOutline}
+              />
+              <IonLabel>Home</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="tab2" href="/tab2">
+              <IonIcon
+                aria-hidden="true"
+                icon={location.pathname === "/tab2" ? appsSharp : appsOutline}
+              />
+              <IonLabel>Categories</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="tab3" href="/tab3">
+              <IonIcon
+                aria-hidden="true"
+                icon={
+                  location.pathname === "/tab3" ? personSharp : personOutline
+                }
+              />
+              <IonLabel>Account</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="tab4" href="/tab4">
+              <IonIcon
+                aria-hidden="true"
+                icon={location.pathname === "/tab4" ? cartSharp : cartOutline}
+              />
+              <IonLabel>Cart</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        )}
+      </IonTabs>
+      {/* )} */}
     </div>
   );
 };
