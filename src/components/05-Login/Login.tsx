@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Login.css";
 import { InputMask } from "primereact/inputmask";
 import { Button } from "primereact/button";
+import { useHistory } from "react-router-dom";
+
 import { Divider } from "primereact/divider";
 import {
   IonButton,
@@ -27,16 +29,14 @@ import {
   search,
 } from "ionicons/icons";
 
-interface LoginProps {
-  onLoginClick: () => void;
-}
-
-const Login: React.FC<LoginProps> = ({ onLoginClick }) => {
+const Login: React.FC<{ onClickNext: () => void }> = ({ onClickNext }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [mobileNumber, setMobileNumber] = useState("");
   const modal = useRef<HTMLIonModalElement>(null);
   const page = useRef(undefined);
+
+  const history = useHistory();
 
   const [presentingElement, setPresentingElement] = useState<
     HTMLElement | undefined
@@ -54,7 +54,21 @@ const Login: React.FC<LoginProps> = ({ onLoginClick }) => {
     if (!isValid) {
       setShowToast(true);
     } else {
-      setIsModalOpen(true);
+      setIsModalOpen(true); // Open the modal first
+      // Close the modal and navigate after a brief delay
+    }
+  };
+
+  const rightClick = () => {
+    const cleanedNumber = mobileNumber.replace(/\D/g, "");
+    console.log("cleanedNumber", cleanedNumber);
+
+    const isValid = cleanedNumber.length === 10;
+    if (!isValid) {
+      setShowToast(true);
+    } else {
+      setIsModalOpen(false);
+      window.location.href = "/otp";
     }
   };
 
@@ -77,8 +91,8 @@ const Login: React.FC<LoginProps> = ({ onLoginClick }) => {
             <Button
               icon="pi pi-arrow-right"
               id="open-action-sheet"
+              severity="secondary"
               onClick={handleButtonClick}
-              className="p-button-success"
             />
           </div>
         </div>
@@ -102,11 +116,6 @@ const Login: React.FC<LoginProps> = ({ onLoginClick }) => {
           <IonIcon icon={search}></IonIcon>
           <p>Find My Account</p>
         </div>
-        {/* <div className="continueWith">
-          <div className="items">
-            <p>Register Now </p>
-          </div>
-        </div> */}
         <p className="disclaimer">
           By proceeding, you consent to get calls, WhatsApp or SMS / RCS
           messages, including by automated dialer, from Shop in Rupees and its
@@ -160,12 +169,7 @@ const Login: React.FC<LoginProps> = ({ onLoginClick }) => {
               justifyContent: "space-around",
             }}
           >
-            <button
-              className="yesBtn"
-              onClick={() => {
-                setIsModalOpen(false);
-              }}
-            >
+            <button className="yesBtn" onClick={rightClick}>
               Yes, I'm here
             </button>
             <button

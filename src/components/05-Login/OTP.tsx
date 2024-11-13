@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { InputOtp, InputOtpChangeEvent } from "primereact/inputotp";
 import { IonButton, IonCheckbox, IonIcon } from "@ionic/react";
 import "./Login.css";
+import { useHistory } from "react-router-dom";
 import { chevronBackOutline, removeOutline } from "ionicons/icons";
 
 const OnBoard: React.FC = () => {
   const [showForm, setShowForm] = useState(false);
   const [token, setTokens] = useState<string | undefined>("");
-  const [isAgreed, setIsAgreed] = useState(false); // Track checkbox state
+  const [isAgreed, setIsAgreed] = useState(false);
+
+  const history = useHistory();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,7 +21,8 @@ const OnBoard: React.FC = () => {
   }, []);
 
   const customInput = (props: any) => {
-    const { events, ...prop } = props;
+    const { events, id, index, ...prop } = props; // Get index or id, if available
+    console.log("props", props);
     return (
       <>
         <input
@@ -43,6 +47,12 @@ const OnBoard: React.FC = () => {
     setIsAgreed((prev) => !prev);
   };
 
+  const handleNextClick = () => {
+    if (isOtpComplete && isAgreed) {
+      history.push("/tab1");
+    }
+  };
+
   const isOtpComplete = token?.length === 6;
   const isNextButtonEnabled = isOtpComplete && isAgreed; // Next button enabled only if OTP is complete and user agreed
 
@@ -57,10 +67,11 @@ const OnBoard: React.FC = () => {
           <InputOtp
             value={token}
             onChange={handleOtpChange}
-            length={6}
             inputTemplate={customInput}
-            style={{ gap: 0 }}
+            style={{ gap: "0" }}
+            length={6}
           />
+
           <div className="otpButton-container">
             <button className="otpButton">Resend Code</button>
           </div>
@@ -94,7 +105,8 @@ const OnBoard: React.FC = () => {
           <div className="nextBtn">
             <IonButton
               color="dark"
-              disabled={!isNextButtonEnabled} // Disable the "Next" button if OTP is not complete or terms not agreed
+              disabled={!isNextButtonEnabled}
+              onClick={handleNextClick}
             >
               Next
             </IonButton>
