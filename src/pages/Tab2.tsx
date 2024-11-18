@@ -1,13 +1,29 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab2.css';
+import React from "react";
+import {
+  IonBackButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonPage,
+  IonSearchbar,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
+import "./Tab2.css";
+import Categories from "../components/02-Categories/Categories";
+import { searchOutline } from "ionicons/icons";
 
 const Tab2: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 2</IonTitle>
+      <IonHeader mode="ios">
+        <IonToolbar className="categoriesTab pt-1 pb-1" mode="ios">
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/tab1"></IonBackButton>
+          </IonButtons>
+          <IonTitle>Categories</IonTitle>
+          <IonIcon slot="end" icon={searchOutline}></IonIcon>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -16,7 +32,7 @@ const Tab2: React.FC = () => {
             <IonTitle size="large">Tab 2</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
+        <Categories />
       </IonContent>
     </IonPage>
   );

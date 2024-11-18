@@ -16,7 +16,10 @@ const Grids: React.FC<GridsProps> = ({ gridData }) => {
   const history = useHistory();
 
   const handleNavigation = (route: string) => {
-    history.push(route);
+    history.push(route, {
+      direction: "forward",
+      animation: "slide",
+    });
   };
 
   return (

@@ -1,0 +1,43 @@
+.categoriesTab {
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  align-items: center;
+}
+
+.categoriesTab ion-icon {
+  font-size: 20px;
+}
+
+ion-back-button {
+  color: black;
+}
+
+/* BANNERS */
+.banners .texts p {
+  margin: 0;
+  text-align: center;
+}
+
+.banners {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-inline-start: 10px;
+  margin-inline-end: 10px;
+  margin-block-end: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.203);
+  padding: 10px;
+  border-radius: 7px;
+}
+
+.bgImg img {
+  block-size: 100px;
+}
+
+.banners .texts button {
+  margin-block-start: 10px;
+  padding: 10px 20px;
+  background-color: #fe1166;
+  border-radius: 7px;
+  color: white;
+}
