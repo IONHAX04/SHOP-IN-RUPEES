@@ -1,0 +1,199 @@
+.carousel-image {
+  /* border-radius: 7px; */
+  overflow: hidden;
+  block-size: 150px;
+}
+
+.carouselDiv img {
+  object-fit: fill;
+}
+
+.carousel.carousel-slider {
+  display: flex;
+  justify-content: center;
+}
+
+.control-dots {
+  background: rgba(0, 0, 0, 0.379);
+  inline-size: auto !important;
+  border-radius: 10px;
+}
+
+.roundedImage {
+  border-radius: 50%;
+  block-size: 60px;
+}
+
+.templateGrid .templateMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.templateGrid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0px;
+  justify-content: space-around;
+}
+
+.templateGrid .templateMenu p {
+  margin-block-start: 2px;
+  font-size: 12px;
+}
+
+.bigCelebrationEnds {
+  block-size: 80px;
+  display: flex;
+  align-items: center;
+  background: #1d315c;
+  background: linear-gradient(
+    135deg,
+    #1d315c 25%,
+    #3f537e 25%,
+    #3f537e 50%,
+    #1d315c 50%,
+    #1d315c 75%,
+    #3f537e 75%,
+    #3f537e
+  );
+  background-size: 40px 40px;
+  animation: move 4s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+.bigCelebrationEnds {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bigCelebrationEnds img {
+  block-size: 80px;
+}
+
+.saleEnds {
+  display: flex;
+  flex-direction: column;
+}
+
+.saleEnds p {
+  margin: 0;
+  color: white;
+}
+
+.mostPopoular {
+  margin-inline-start: 10px;
+  margin-inline-end: 10px;
+}
+
+.mostPopoular .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mostPopoular .header p {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* PRODUCTS */
+
+.productCards {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.productCards .products {
+  block-size: 220px;
+  inline-size: 150px;
+  border: 1px solid;
+  min-inline-size: 150px;
+  margin-inline-end: 4px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.productCards .products img {
+  block-size: 150px;
+  inline-size: 150px;
+  border-start-end-radius: 5px;
+  border-start-start-radius: 5px;
+}
+
+.productCards .products .pricing {
+  display: flex;
+  align-items: center;
+}
+
+.productCards .products p {
+  margin: 0;
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.productCards .products .pricing .discountPrice {
+  font-size: 14px;
+}
+
+.productCards .products .pricing .originalPrice {
+  font-size: 12px;
+  text-decoration: line-through;
+  padding-inline-start: 5px;
+}
+
+/* PRODUCT OFFERS - DISCOUNT */
+
+.prodOffers {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  inline-size: 100%;
+  box-sizing: border-box;
+}
+
+.offers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  flex: 1 1 calc(33.33% - 20px);
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.201);
+}
+
+.prodOffers .offers img {
+  max-inline-size: 100%;
+  block-size: auto;
+  border-start-end-radius: 5px;
+  border-start-start-radius: 5px;
+  margin-block-end: 10px;
+}
+
+.prodOffers .offers p {
+  margin: 0;
+  font-size: 12px;
+}
+
+/* INDIV ITEMS */
+.indivItems img {
+  height: 70px;
+}

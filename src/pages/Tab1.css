@@ -1,0 +1,15 @@
+.toolbarHome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+.menuIcon {
+  font-size: 27px;
+}
+
+.toolbarHome ion-icon {
+  font-size: 22px;
+}

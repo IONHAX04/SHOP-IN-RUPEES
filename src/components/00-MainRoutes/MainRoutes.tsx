@@ -35,7 +35,7 @@ const MainRoutes: React.FC = () => {
 
   return (
     <IonTabs>
-      <IonRouterOutlet>
+      <IonRouterOutlet id="main">
         <Route exact path="/getstarted">
           <Getstarted />
         </Route>

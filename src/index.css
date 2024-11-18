@@ -30,3 +30,8 @@
 .getStarted button ion-icon {
   margin-inline-start: 20px;
 }
+
+.header-md {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}

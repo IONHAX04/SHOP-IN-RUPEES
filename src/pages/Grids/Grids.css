@@ -1,0 +1,9 @@
+.templateGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.roundedImage {
+  object-fit: cover;
+  border-radius: 50%;
+}
