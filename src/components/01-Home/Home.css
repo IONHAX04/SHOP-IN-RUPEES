@@ -195,5 +195,145 @@
 
 /* INDIV ITEMS */
 .indivItems img {
-  height: 70px;
+  block-size: 60px;
+}
+
+.indivItems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-block-end: 10px;
+  justify-content: space-between;
+}
+
+.indivItems .productDescr .descriptions p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.indivItems .productDescr .descriptions .pricingDetails {
+  display: flex;
+}
+
+.productDescr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.indivItems .cart ion-icon {
+  font-size: 23px;
+  background-color: #b3bac0;
+  padding: 10px;
+  border-radius: 50%;
+  color: rgb(0, 0, 0);
+}
+
+.suggestedItemsIndiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestedItemsIndiv .indivItems .productDescr .pricingDetails .offerPer {
+  color: green;
+}
+
+.suggestedItemsIndiv .indivItems .productDescr .pricingDetails .strikePrice {
+  text-decoration: line-through;
+}
+
+.suggestedItemsIndiv .indivItems .productDescr .pricingDetails .offerPrice {
+  font-weight: bold;
+}
+
+/* TOP SELECTION BG */
+.bgPrimary {
+  background-color: #222d3a;
+  margin: 0 !important;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  padding-block-end: 10px;
+}
+
+.bgPrimary .header p {
+  color: white;
+}
+
+.itemsGrid img {
+  border-start-end-radius: 7px;
+  border-start-start-radius: 7px;
+}
+
+.itemsGrid {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 7px;
+}
+
+.itemsGridParent {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+
+.itemsGridParent .itemsGrid .itemsDetails p {
+  margin: 0;
+  font-size: 13px;
+  padding: 0px 10px 0px 10px;
+}
+
+.selectionGridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+
+.selectionGrid {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.selectionDetails {
+  padding-block-end: 3px;
+}
+
+.selectionDetails p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.sponserAds {
+  padding: 10px;
+}
+
+.sponserAds p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.sponserAds .adContents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sponserAds .contents {
+  border: 1px solid black;
+  border-radius: 7px;
+}
+
+.sponserAds .contents img {
+  block-size: 200px;
+  inline-size: 100%;
+  object-fit: cover;
+  border-start-end-radius: 6px;
+  border-start-start-radius: 6px;
+}
+
+.sponserAds .contents .adContents {
+  padding: 0px 10px 10px 10px;
 }

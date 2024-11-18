@@ -10,6 +10,7 @@ import ProdOffers from "../../pages/ProdOffers/ProdOffers";
 
 import { Divider } from "primereact/divider";
 import IndivProducts from "../../pages/IndivProducts/IndivProducts";
+import SelectionGrids from "../../pages/SelectionGrids/SelectionGrids";
 
 const Home: React.FC = () => {
   const gridData = [
@@ -100,6 +101,57 @@ const Home: React.FC = () => {
     },
   ];
 
+  const suggestedProducts = [
+    {
+      image: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      name: "Product 1",
+      specifications: "Specifications of product 1",
+      offerPercentage: "50% off",
+      strikePrice: "$1500",
+      offerPrice: "$999",
+    },
+    {
+      image: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      name: "Product 2",
+      specifications: "Specifications of product 2",
+      offerPercentage: "40% off",
+      strikePrice: "$1200",
+      offerPrice: "$720",
+    },
+    {
+      image: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      name: "Product 3",
+      specifications: "Specifications of product 3",
+      offerPercentage: "30% off",
+      strikePrice: "$1600",
+      offerPrice: "$720",
+    },
+    // ... Other products
+  ];
+
+  const selectionGridData = [
+    {
+      image: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      item: "Wired Headphones",
+      description: "Up to 50% off",
+    },
+    {
+      image: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      item: "Bluetooth Speakers",
+      description: "Up to 60% off",
+    },
+    {
+      image: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      item: "Smartwatches",
+      description: "Up to 70% off",
+    },
+    {
+      image: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+      item: "Laptops",
+      description: "Up to 40% off",
+    },
+  ];
+
   const renderer = ({
     hours,
     minutes,
@@ -154,9 +206,59 @@ const Home: React.FC = () => {
             View all <IonIcon icon={chevronForwardOutline}></IonIcon>
           </p>
         </div>
-        <IndivProducts />
+        <IndivProducts products={suggestedProducts} />
       </div>
       <Divider />
+
+      <div className="mostPopoular bgPrimary">
+        <div className="header">
+          <p>Top Selection </p>
+          <p>
+            View all <IonIcon icon={chevronForwardOutline}></IonIcon>
+          </p>
+        </div>
+        <SelectionGrids grids={selectionGridData} />
+      </div>
+
+      <div className="mostPopoular">
+        <div className="header">
+          <p>Ongoing Offers</p>
+          <p>
+            View all <IonIcon icon={chevronForwardOutline}></IonIcon>
+          </p>
+        </div>
+
+        <Products products={products} />
+        <Divider />
+      </div>
+
+      <div className="sponserAds">
+        <p>Sponsored</p>
+        <div className="contents">
+          <img
+            src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
+            alt=""
+          />
+          <div className="adContents">
+            <p>Min. 50% Off</p>
+            <IonIcon icon={chevronForwardOutline}></IonIcon>
+          </div>
+        </div>
+      </div>
+
+      <Divider />
+      <ProdOffers offers={offers} />
+      <ProdOffers offers={offers} />
+
+      <div className="mostPopoular bgPrimary">
+        <div className="header">
+          <p>Top Offers </p>
+          <p>
+            View all <IonIcon icon={chevronForwardOutline}></IonIcon>
+          </p>
+        </div>
+        <SelectionGrids grids={selectionGridData} />
+      </div>
     </div>
   );
 };

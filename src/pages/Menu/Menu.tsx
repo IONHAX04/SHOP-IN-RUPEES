@@ -2,7 +2,6 @@ import {
   IonContent,
   IonIcon,
   IonItem,
-  IonItemDivider,
   IonLabel,
   IonList,
   IonListHeader,
@@ -13,29 +12,11 @@ import {
 
 import { useLocation } from "react-router-dom";
 import {
-  archiveOutline,
-  archiveSharp,
   bedOutline,
   book,
-  bookmarkOutline,
-  bookOutline,
-  bookSharp,
   desktopSharp,
   ellipsisHorizontalOutline,
-  heartOutline,
-  heartSharp,
-  laptopOutline,
-  mailOutline,
-  mailSharp,
-  paperPlaneOutline,
-  paperPlaneSharp,
-  phonePortrait,
-  phonePortraitOutline,
   phonePortraitSharp,
-  trashOutline,
-  trashSharp,
-  warningOutline,
-  warningSharp,
 } from "ionicons/icons";
 import "./Menu.css";
 
@@ -79,7 +60,7 @@ const appPages: AppPage[] = [
   },
 ];
 
-const labels = [
+const features = [
   "Today's Deals",
   "Shop In Rupees Business",
   "Handloom and Handicrafts",
@@ -87,6 +68,8 @@ const labels = [
   "Sell on Shop in Rupees",
   "International Brands",
 ];
+
+const settings = ["Color Theme", "Profile", "My Cart", "Logout"];
 
 const Menu: React.FC = () => {
   const location = useLocation();
@@ -124,8 +107,8 @@ const Menu: React.FC = () => {
         </IonList>
 
         <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
+          <IonListHeader>Features</IonListHeader>
+          {features.map((label, index) => (
             <IonItem lines="none" key={index}>
               <IonLabel>{label}</IonLabel>
             </IonItem>
@@ -133,8 +116,8 @@ const Menu: React.FC = () => {
         </IonList>
 
         <IonList id="labels-list">
-          <IonListHeader>Features</IonListHeader>
-          {labels.map((label, index) => (
+          <IonListHeader>Settings</IonListHeader>
+          {settings.map((label, index) => (
             <IonItem lines="none" key={index}>
               <IonLabel>{label}</IonLabel>
             </IonItem>
