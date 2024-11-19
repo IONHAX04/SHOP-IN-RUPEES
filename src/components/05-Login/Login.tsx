@@ -129,7 +129,7 @@ const Login: React.FC<{ onClickNext: () => void }> = ({ onClickNext }) => {
         mode="ios"
         onDidDismiss={() => setIsModalOpen(false)}
         presentingElement={presentingElement}
-        style={{ blockSize: "50vh", insetBlockStart: "50vh" }}
+        style={{ blockSize: "60vh", insetBlockStart: "40vh" }}
       >
         <IonHeader>
           <IonToolbar className="ionHeaderModel">
