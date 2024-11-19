@@ -1,0 +1,116 @@
+.location {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 3px 10px;
+}
+
+.location p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.myCart p {
+  margin: 0;
+}
+
+.cartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  padding-block-start: 10px;
+  padding-block-end: 10px;
+}
+
+.myCart .cartHead {
+  font-size: 15px !important;
+}
+
+.myCart .itemsCount {
+  font-size: 12px;
+}
+
+/* PRODUCT CART ITEMS LIST */
+.cartListItemsParent {
+  display: flex;
+  flex-direction: row;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+.cartListItemsParent img {
+  inline-size: 20vw;
+}
+
+.cartListItemsParent .prodDetailsCart {
+  inline-size: 80vw;
+}
+
+.cartListItemsParent .prodDetailsCart .prodCartName {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartListItemsParent .prodDetailsCart .prodCartName ion-icon {
+  font-size: 20px;
+}
+
+.cartListItemsParent .prodDetailsCart .prodCartName p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.cartListItemsParent .prodDetailsCart .productPricing p {
+  margin: 0;
+}
+
+.cartListItemsParent .prodDetailsCart .productPricing {
+  display: flex;
+  align-items: center;
+}
+
+.cartListItemsParent .prodDetailsCart .productPricing .cartOfferPrice {
+  font-size: 14px;
+}
+
+.cartListItemsParent .prodDetailsCart .productPricing .strikeOfferPrice {
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.cartListItemsParent .prodDetailsCart .productPricing .ratings {
+  font-size: 14px;
+}
+
+.cartListItemsParent .prodDetailsCart .freeDeliveryOpt p {
+  margin: 0;
+  font-size: 13px;
+  color: green;
+  font-weight: 600;
+}
+
+.cartListItemsParent .prodDetailsCart .countItems p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.cartListItemsParent .prodDetailsCart .countItems .counts {
+  display: flex;
+  align-items: center;
+}
+
+.cartListItemsParent .prodDetailsCart .countItems .counts {
+  font-size: 20px;
+}
+
+.cartListItemsParent .prodDetailsCart .countItems {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
